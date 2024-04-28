@@ -9,6 +9,9 @@ services:
       KINO_SERVICE_HOST: kino
     ports:
       - "8000:8000"
+    depends_on:
+      - kino
+      - celery
 
   kino:
     build: kino_service_grpc
