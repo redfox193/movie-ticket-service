@@ -1,0 +1,17 @@
+{% extends 'ticket/base.html' %}
+
+{% block content %}
+    <div style="display: flex; align-items: center; align-items: center; justify-content: center;">
+        <img width="90px" src="https://images.assetsdelivery.com/compings_v2/tiodwiyanto/tiodwiyanto2106/tiodwiyanto210600608.jpg">
+        <h1>iTicket</h1>
+    </div>
+    
+    <h1>Форма покупки билетов</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit"/>
+    </form>
+
+{% endblock content %}

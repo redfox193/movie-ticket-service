@@ -1,0 +1,10 @@
+{% extends 'ticket/base.html' %}
+
+{% block content %}
+
+<h1>Спасибо за покупку!</h1>
+
+<p>Чек с кодом для входа в комнату отправлен на почту.</p>
+<p><a href="{% url 'fast_ticket:buy_ticket' %}">Купить ещё один билет.</a></p>
+
+{% endblock content %}

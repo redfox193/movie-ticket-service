@@ -1,0 +1,30 @@
+syntax = "proto3";
+import "google/protobuf/empty.proto";
+
+message Film {
+  int32 id = 1;
+  string name = 2;
+  float cost = 3;
+}
+
+message PremieresResponse {
+  repeated Film premieres = 1;
+}
+
+message CodeResponse {
+  string code = 1;
+}
+
+message DatesResponse {
+  repeated string dates = 1;
+}
+
+message UserRequest {
+  int32 film_id = 1;
+}
+
+service ITicket {
+  rpc getPremieres (google.protobuf.Empty) returns (PremieresResponse);
+  rpc genCode (UserRequest) returns (CodeResponse);
+  rpc getDates (UserRequest) returns (DatesResponse);
+}
