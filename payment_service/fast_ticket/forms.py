@@ -15,7 +15,7 @@ kino_service_client = ITicketStub(kino_service_channel)
 
 class TicketForm(forms.Form):
     film = forms.ChoiceField(label='Choose a Film')
-    email = forms.EmailField(label='Почта')
+    email = forms.EmailField(label='Email')
     cc_number = CardNumberField(label='Card Number')
     cc_expiry = CardExpiryField(label='Expiration Date')
     cc_code = SecurityCodeField(label='CVV/CVC')
