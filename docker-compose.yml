@@ -14,7 +14,7 @@ services:
       - celery
 
   kino:
-    build: kino_service_grpc
+    build: kino_service
     environment:
       POSTGRES_HOST: kino_db
     env_file:
