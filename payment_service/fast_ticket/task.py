@@ -34,7 +34,7 @@ def send_ticket_email_task(film_id, film, cost, email):
         f"Purchase date\t{new_history.date}\n"
         f"Cost \t\t{cost}\n\n"
         f"Film\t\t{new_history.film}\n"
-        f"Code\t\t\t{new_history.code}\n"
+        f"Code\t\t{new_history.code}\n"
         f"Premiere dates\t{', '.join(film_dates_response.dates)}",
         "iticket@ishop.com",
         [new_history.email],
