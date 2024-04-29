@@ -31,7 +31,7 @@ class TicketForm(forms.Form):
                 'cost': film.cost,
                 'name': film.name
             }
-            dynamic_choices.append((film.id, f"{film.name} ({film.cost} руб.)"))
+            dynamic_choices.append((film.id, f"{film.name} ({film.cost} $)"))
         self.fields['film'].choices = dynamic_choices
 
     def send_ticket(self):

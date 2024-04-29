@@ -45,9 +45,9 @@ def upgrade() -> None:
     op.create_index(op.f('ix_date_id'), 'date', ['id'], unique=False)
 
     op.bulk_insert(film_table, [
-        {'id': 1, 'name': 'Оппенгеймер', 'cost': 10.50},
-        {'id': 2, 'name': 'Дюна: Часть вторая', 'cost': 15.75},
-        {'id': 3, 'name': 'Интерстеллар', 'cost': 20.00}
+        {'id': 1, 'name': 'Oppenheimer', 'cost': 10.50},
+        {'id': 2, 'name': 'Dune: Part two', 'cost': 15.75},
+        {'id': 3, 'name': 'Interstellar', 'cost': 20.00}
     ])
 
     op.bulk_insert(date_table, [

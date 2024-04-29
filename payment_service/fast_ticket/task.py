@@ -31,11 +31,11 @@ def send_ticket_email_task(film_id, film, cost, email):
     sleep(5)
     send_mail(
         "Thanks for using iTicket! Your receipt.",
-        f"Дата покупки\t{new_history.date}\n"
-        f"Стоимость \t\t{cost}\n\n"
-        f"Фильм\t\t{new_history.film}\n"
-        f"Код\t\t\t{new_history.code}\n"
-        f"Даты премьер\t{', '.join(film_dates_response.dates)}",
+        f"Purchase date\t{new_history.date}\n"
+        f"Cost \t\t{cost}\n\n"
+        f"Film\t\t{new_history.film}\n"
+        f"Code\t\t\t{new_history.code}\n"
+        f"Premiere dates\t{', '.join(film_dates_response.dates)}",
         "iticket@ishop.com",
         [new_history.email],
         fail_silently=False,
