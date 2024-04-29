@@ -1,6 +1,26 @@
 # movie-ticket-service
 A project which represents a service for buying online tickets for movies. This project could be used as an example of using such technologies as gRPC and async integration with Celery.
 
+## Requirements
+_[Docker](https://docs.docker.com/get-docker/)_ and a tool to work with databases (optional, if you want to see the data stored)
+
+## Usage
+
+#### Run
+Use ```start.bat``` to run application using Docker. After that go to ```localhost:8000``` to test service.
+Additionally following ports are available:
+
+```localhost:5555``` - here you can monitor tasks using _[flower](https://pypi.org/project/flower/)_
+
+```localhost:5432``` - is where you can find kino service database.
+
+Postgres database is in volume ```iticket_kino_db_data``` and sqlite database
+is mounted in ```payment_service/data```.
+
+### Stop
+
+Use ```clean.bat``` to stop application and clean data.
+
 ## Architecture
 An application consists of two microservices, ```kino_service``` and ```payment_service```.
 
@@ -25,23 +45,3 @@ To see if email was sent run this command in terminal (email is not sent instant
 ```shell
 docker logs iticket-celery-1 # iticket-celery-1 is the container with celery worker
 ```
-
-## Requirements
-_[Docker](https://docs.docker.com/get-docker/)_ and a tool to work with databases (optional, if you want to see data stored)
-
-## Usage
-
-#### Run
-Use ```start.bat``` to run application using Docker. After that go to ```localhost:8000``` to test service.
-Additionally following ports are used:
-
-```localhost:5555``` - here you can monitor tasks using _[flower](https://pypi.org/project/flower/)_
-
-```localhost:5432``` - is where you can find kino service database.
-
-Postgres database is in volume ```iticket_kino_db_data``` and sqlite database
-is mounted in ```payment_service/data```.
-
-### Stop
-
-Use ```clean.bat``` to stop application and clean data.
