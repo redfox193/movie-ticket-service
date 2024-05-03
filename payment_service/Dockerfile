@@ -10,5 +10,3 @@ COPY fast_ticket/ fast_ticket/
 COPY payment_service/ payment_service/
 COPY manage.py manage.py
 COPY data/ data/
-
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

@@ -3,6 +3,7 @@ version: "3.8"
 services:
   payment:
     build: payment_service
+    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
     volumes:
       - ./payment_service/data:/app/data
     environment:
@@ -10,11 +11,22 @@ services:
     ports:
       - "8000:8000"
     depends_on:
-      - kino
-      - celery
+      kino:
+        condition: service_started
+      celery:
+        condition: service_started
+      payment_db_migration:
+        condition: service_completed_successfully
+
+  payment_db_migration:
+    build: payment_service
+    volumes:
+      - ./payment_service/data:/app/data
+    command: ["python", "manage.py", "migrate"]
 
   kino:
     build: kino_service
+    command: ["python", "src/main.py"]
     environment:
       POSTGRES_HOST: kino_db
     env_file:
@@ -22,7 +34,19 @@ services:
     expose:
       - "50051"
     depends_on:
-      - kino_db
+      kino_db_migration:
+        condition: service_completed_successfully
+
+  kino_db_migration:
+    build: kino_service
+    command: ["alembic", "upgrade", "head"]
+    environment:
+      POSTGRES_HOST: kino_db
+    env_file:
+      - .env
+    depends_on:
+      kino_db:
+        condition: service_started
 
   kino_db:
     image: postgres:13.3
