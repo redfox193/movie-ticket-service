@@ -7,7 +7,11 @@ _[Docker](https://docs.docker.com/get-docker/)_ and a tool to work with database
 ## Usage
 
 #### Run
-Use ```start.bat``` to run application using Docker. After that go to ```localhost:8000``` to test service.
+Tu run services use: 
+```shell
+docker-compose up -d
+```
+After that go to ```localhost:8000``` to test service.
 Additionally following ports are available:
 
 ```localhost:5555``` - here you can monitor tasks using _[flower](https://pypi.org/project/flower/)_
@@ -19,7 +23,7 @@ is mounted in ```payment_service/data```.
 
 ### Stop
 
-Use ```clean.bat``` to stop application and clean data.
+Use ```clean.bat``` to stop application and clean data. Or ```docker-compose down``` to stop all containers.
 
 ## Architecture
 An application consists of two microservices, ```kino_service``` and ```payment_service```.
