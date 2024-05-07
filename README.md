@@ -11,7 +11,7 @@ Tu run services use:
 ```shell
 docker-compose up -d
 ```
-After that go to ```localhost:8000``` to test service.
+After that go to http://localhost:8000 to test service.
 Additionally following ports are available:
 
 ```localhost:5555``` - here you can monitor tasks using _[flower](https://pypi.org/project/flower/)_
