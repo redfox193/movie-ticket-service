@@ -21,7 +21,7 @@ Additionally following ports are available:
 Postgres database is in volume ```iticket_kino_db_data``` and sqlite database
 is mounted in ```payment_service/data```.
 
-### Stop
+#### Stop
 
 Use ```clean.bat``` to stop application and clean data. Or ```docker-compose down``` to stop all containers.
 
