@@ -14,11 +14,11 @@ Tu run services use:
 docker-compose up -d
 ```
 After that go to http://localhost:8000 to test service.
-Additionally following ports are available:
+Additionally following endpoints are available:
 
-```localhost:5555``` - here you can monitor tasks using _[flower](https://pypi.org/project/flower/)_
+http://localhost:5555 - here you can monitor tasks using _[flower](https://pypi.org/project/flower/)_
 
-```localhost:5432``` - is where you can find kino service database.
+http://localhost:5432 - kino service database.
 
 Postgres database is in volume ```iticket_kino_db_data``` and sqlite database
 is mounted in ```payment_service/data```.
