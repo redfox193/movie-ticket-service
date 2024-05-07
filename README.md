@@ -1,5 +1,5 @@
 # movie-ticket-service
-A project which represents a service for buying online tickets for movies. This project could be used as an example of using such technologies as gRPC and async integration with Celery.
+A project which represents a service for buying online tickets for movies. It uses such technologies as gRPC and async integration with Celery.
 
 ## Requirements
 _[Docker](https://docs.docker.com/get-docker/)_ and a tool to work with databases (optional, if you want to see the data stored)
