@@ -7,6 +7,8 @@ _[Docker](https://docs.docker.com/get-docker/)_ and a tool to work with database
 ## Usage
 
 #### Run
+Create ```.env``` at the root as ```.env.example```.
+
 Tu run services use: 
 ```shell
 docker-compose up -d
